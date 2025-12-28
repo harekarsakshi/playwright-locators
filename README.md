@@ -41,3 +41,14 @@ These locators follow Playwright best practices and improve test reliability.
 
 -URL validation after successful login
 -Error message text validation for invalid login
+
+## 🔁 Running tests ✅
+
+To run the Playwright Test suite, use the Playwright test runner (do NOT run spec files with `node` directly):
+
+- Run all tests: `npx playwright test` or `npm test`
+- Run a single test file: `npx playwright test tests/login-practice-test.spec.js`
+- Run Chromium headed: `npm run test:headed` (runs `playwright test --project=chromium --headed`)
+- Run tests with the Playwright inspector/debugger: `npm run test:debug`
+
+> Note: Running a spec with `node` (for example `node tests/login-practice-test.spec.js`) will raise the error: "Playwright Test did not expect test.describe() to be called here." Use the Playwright Test runner instead.

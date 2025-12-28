@@ -6,7 +6,12 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:debug": "playwright test --debug",
+    "collect:screenshots": "node scripts/copy-failure-screenshots.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

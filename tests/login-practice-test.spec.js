@@ -14,7 +14,7 @@ test.describe("SauceDemo Login & Cart Suite", () => {
     password = "secret_sauce"
   ) {
     // use stable data-test attributes and explicit wait for visibility
-    const userInput = page.locator('[data-test="username"]');
+    const userInput = page.locator('[data-test="username"]'); // Using data-test attributes for stable and non-flaky locators
     const passInput = page.locator('[data-test="password"]');
     await userInput.waitFor({ state: "visible", timeout: 10000 });
     await userInput.fill(username);
@@ -65,8 +65,7 @@ test.describe("SauceDemo Login & Cart Suite", () => {
     // Go to cart page
     await cartBadge.click();
     // Verify item is in cart
-    const cartItems = await page.locator(".cart_item").count();
-    expect(cartItems).toBe(1);
+    await expect(page.locator(".cart_item")).toHaveCount(1);
     await page.getByRole("button", { name: /open menu/i }).click();
     await page.getByRole("link", { name: "Logout" }).click();
 

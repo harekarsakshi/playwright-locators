@@ -72,3 +72,6 @@ Debug using Playwright Inspector
 npm run test:debug
 
 ⚠️ Running test files directly with node will cause errors. Always use the Playwright test runner.
+
+
+
